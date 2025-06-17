@@ -5,15 +5,20 @@ import Logo from '../assets/testFood.jpg';
 
 //themed   component 
 import ThemedView from '../components/ThemedView';
+import ThemedText from '../components/ThemedText';
 const Home = () => {
   return (
     <ThemedView style={styles.container}>
        <Image source={Logo} style={styles.img}/>
-      <Text style={styles.title}>Heading Number 1</Text>
-      <Text style={{marginTop:20,marginBottom:25}}>Reading List Elements</Text>
-      <Link style={styles.link} href='/about'>About Page</Link>
-      <Link  style={styles.link} href='/contact'>Contact Page</Link>
-    
+      <ThemedText style={styles.title} title={true}>Heading Number 1</ThemedText>
+      <ThemedText style={{marginTop:20,marginBottom:25}}>Reading List Elements</ThemedText>
+      <Link style={styles.link} href='/login'>
+      
+      <ThemedText>Login</ThemedText>
+      </Link>
+
+      <Link  style={styles.link} href='/register'><ThemedText>Register</ThemedText></Link>
+      <Link  style={styles.link} href='/profile'><ThemedText>Profile</ThemedText></Link>
     </ThemedView>
   )
 }
