@@ -2,11 +2,13 @@ import { Stack } from 'expo-router';
 import { Text, View, StyleSheet, useColorScheme, StatusBar } from 'react-native';
 import { Colors } from '../constants/Colors.js';
 import { UserProvider } from '../contexts/UserContext.jsx';
+import { BooksProvider } from '../contexts/BooksContext.jsx';
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const theme =Colors[colorScheme]??Colors.light
   return (
     <UserProvider>
+      <BooksProvider>
         <StatusBar value="auto"/>
         <Stack screenOptions={{
             headerStyle:{backgroundColor:theme.navBackground},
@@ -18,6 +20,7 @@ export default function RootLayout() {
             <Stack.Screen name='(auth)' options={{headerShown:false}}/>
             <Stack.Screen name='(dashboard)' options={{headerShown:false}}/>
           </Stack>
+          </BooksProvider>
       </UserProvider>
     
   );
