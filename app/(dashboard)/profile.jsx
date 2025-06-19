@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     },
     heading:{
         fontWeight:"bold",
-        fontSize:"18",
+        fontSize:18,
         textAlign:"center"
     }
 })

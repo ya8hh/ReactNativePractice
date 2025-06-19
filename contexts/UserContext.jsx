@@ -14,6 +14,7 @@ export const UserContext = createContext();
             await account.createEmailPasswordSession(email,password)
             const response = await account.get()
             setUser(response)
+            return response;
         }catch(error){
            throw Error(error.message)
         }
@@ -37,6 +38,7 @@ export const UserContext = createContext();
             setUser(response)
         } catch (error) {
             setUser(null) 
+            
         }finally{
             setAuthChecked(true)
         }
@@ -46,7 +48,7 @@ export const UserContext = createContext();
     },[])
 
     return (
-        <UserContext.Provider value={{user,login,register,logout}}>
+        <UserContext.Provider value={{user,login,register,logout,authChecked }}>
             {children}
         </UserContext.Provider>
     )
